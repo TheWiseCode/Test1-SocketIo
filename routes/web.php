@@ -3,6 +3,7 @@
 use App\Events\PrivateMessage;
 use App\Events\PublicMessage;
 use App\Http\Controllers\HomeController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,7 @@ Route::get('/chat', function () {
 });
 
 Route::get('/private-chat', function () {
-    event(new PrivateMessage(auth()->user()));
+    event(new PrivateMessage(User::find(Auth::id())));
     dd('Private event executed successfully.');
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -14,7 +15,7 @@ class PrivateMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public User $user;
+    public $user;
 
     /**
      * Create a new event instance.
@@ -39,7 +40,7 @@ class PrivateMessage implements ShouldBroadcast
     /**
      * @return string
      */
-    public function broadcasAs(){
+    public function broadcastAs(){
         return 'MessageEvent';
     }
 

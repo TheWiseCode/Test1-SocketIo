@@ -37,7 +37,7 @@ class PublicMessage implements ShouldBroadcast
     /**
      * @return string
      */
-    public function broadcasAs(){
+    public function broadcastAs(){
         return 'MessageEvent';
     }
 
